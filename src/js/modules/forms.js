@@ -2,7 +2,8 @@ import checkNumInputs from "./checkNumInputs";
 
 const forms = (state) => {
     const form = document.querySelectorAll('form'),
-          inputs = document.querySelectorAll('input');
+          inputs = document.querySelectorAll('input'),
+          end = document.querySelector('.popup_calc_end');
 
     checkNumInputs('input[name="user_phone"]');
 
@@ -53,6 +54,8 @@ const forms = (state) => {
                     clearInputs();
                     setTimeout(() => {
                         statusMessage.remove();
+                        end.style.display = 'none';
+                        document.body.style.overflow = "";
                     }, 5000);
                 })
         });
